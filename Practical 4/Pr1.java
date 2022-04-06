@@ -1,8 +1,8 @@
 import java.util.*;
-class Cricket {
+abstract class Cricket {
     String name;
     int age;
-    void display();
+    abstract void display();
     void setdata(String s, int a){
         name = s;
         age = a;
@@ -18,7 +18,7 @@ class Match extends Cricket{
         name = s;
         age = a;
         no_of_odi = c;
-        no_of_test = d;
+        no_of_test = b;
     }
 }
 public class Main
