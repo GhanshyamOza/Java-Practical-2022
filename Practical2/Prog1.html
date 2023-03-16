@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 2.1</title>
+    <style>
+        #mainDiv{
+            height: 300px;
+            width: 300px;
+            border: 5px black solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Below Boxs' background color changes in each 1 seconds.<br><br>
+        <div id="mainDiv">
+        </div>
+    </div>
+    <script>
+        i = 0;
+        let intervals = setInterval(changeBG, 1000);
+        function changeBG(){
+            color = ['red', 'green', 'blue', 'yellow', 'black'];
+            i = (i+1) % color.length;
+            document.getElementById("mainDiv").style.backgroundColor = color[i];
+        }
+    </script>
+</body>
+</html>

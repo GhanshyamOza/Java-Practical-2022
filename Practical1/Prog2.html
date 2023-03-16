@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 1.2</title>
+</head>
+<body>
+    <label for="mobile">Enter Mobile Number</label>
+    <input type="number" id="mobile" onkeyup="checkMobile()">
+    <script>
+        function checkMobile(){
+            var num = document.getElementById('mobile');
+            var len = num.value.length;
+            if(len<10)
+                num.style.backgroundColor = "red";
+            else if(len==10)
+                alert("Valid Mobile Number, Don't Enter more numbers!!");
+        }
+    </script>
+</body>
+</html>

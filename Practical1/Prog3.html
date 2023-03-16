@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 1.3</title>
+</head>
+<body>
+    Enter Car Model Name: <input type="text" id="model"/><br><br>
+    Enter Car color: <input type="text" id="color"/> <br><br>
+    Enter Car Price: <input type="number" id="price"/> <br><br>
+    Enter Car Speed: <input type="number" id="speed"/> <br><br>
+    Enter Speed to Increase: <input type="number" id="incSpeed"/><br><br>
+    Enter Speed to Decrease: <input type="number" id="decSpeed"/><br><br>
+    <button onclick="createObj()">Click Me!</button><br>
+    <script>
+        function createObj(){
+            let model = document.getElementById('model').value;
+            let color = document.getElementById('color').value;
+            let price = document.getElementById('price').value;
+            let speed = document.getElementById('speed').value;
+            let incspeed = document.getElementById('incSpeed').value;
+            let decspeed = document.getElementById('decSpeed').value;
+            let Car = {
+                carModelName : model,
+                carColor : color,
+                carPrice : price,
+                carSpeed : speed,
+                displaySpeed : function(){
+                    return this.CarSpeed;
+                },
+                increaseSpeed : function(speedInc){
+                    this.CarSpeed = this.CarSpeed + speedInc;
+                },
+                decreaseSpeed : function(speedDec){
+                    this.CarSpeed = this.carSpeed - speedDec;
+                }
+            };
+            Car.decreaseSpeed(decspeed);
+            Car.increaseSpeed(incspeed);
+            let carss = Car.displaySpeed();
+            alert(carss);
+            document.write("<h2>Car Properties</h2>" + "<br>");
+            document.write("<h3>Car Model: " + Car.carModelName + "<br>Car Color: " + Car.carColor + "<br>Car Price: " + Car.carPrice + "<br>Car Speed: " + Car.CarSpeed + "</h3>") ;
+        }
+    </script>
+</body>
+</html>
